@@ -1,0 +1,49 @@
+<!DOCTYTPE HTML>
+<html>
+<body></body>
+<head>
+    <title> 
+        Calculator
+    </title>
+    <link href="style.css" rel = 'stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class = "box" id = "box1">
+            <button id = "fuck" value="1">1</button>
+        </div>
+        <div class = "box" id = "box2">2</div>
+        <div class = "box" id = "box3">3</div>
+        <div class = "box" id = "box4">4</div>
+        <div class = "box" id = "box5">5</div>
+        <div class = "box" id = "box6">6</div>
+        <div class = "box" id = "box7">7</div>
+        <div class = "box" id = "box8">8</div>
+        <div class = "box" id = "box9">9</div>
+    </div>
+    <div class="upperbar">
+        <div class = "bar" id = "bar1"></div>
+    </div>
+    <div class="calculation">
+        <div class = "buttona" id = "add">+</div>
+        <div class = "buttona" id = "subtract">-</div>
+        <div class = "buttona" id = "multiply">x</div>
+        <div class = "buttona" id = "divide">/</div>
+    </div>
+    <div class="zero">
+        <div class = "zerobutton" id = "box0">0</div>
+    </div>
+    <button id="myBtn" type="button">Click Me!</button>
+    <script>
+        const myBtn = document.getElementById("box2");
+        const outputBar = document.getElementById("bar1");
+        const fuck = document.getElementById("fuck");
+
+        myBtn.addEventListener("click", function(e){
+
+            console.log("box1 was pressed");
+            outputBar.innerHTML = fuck.value;
+        });
+    </script>
+</body>
+</html>
