@@ -8,42 +8,46 @@
     <link href="style.css" rel = 'stylesheet'>
 </head>
 <body>
-    <div class="container">
-        <div class = "box" id = "box1">
-            <button id = "fuck" value="1">1</button>
+    <div class = "container">
+        <input id="outputBar" type="" disabled>
+        <div class="keys">
+            <button id = "buttonC" onclick="clearBar()" class="specialButton">c</button>
+            <button id = "button9" onclick="handleButtonClick(9)">9</button>
+            <button id = "button8" onclick="handleButtonClick(8)">8</button>
+            <button id = "button7" onclick="handleButtonClick(7)">7</button>
+            <button id = "button+" onclick="handleButtonClick('+')" class="specialButton">+</button>
+            <button id = "button6" onclick="handleButtonClick(6)">6</button>
+            <button id = "button5" onclick="handleButtonClick(5)">5</button>
+            <button id = "button4" onclick="handleButtonClick(4)">4</button>
+            <button id = "button-" onclick="handleButtonClick('-')" class="specialButton">-</button>
+            <button id = "button3" onclick="handleButtonClick(3)">3</button>
+            <button id = "button2" onclick="handleButtonClick(2)">2</button>
+            <button id = "button1" onclick="handleButtonClick(1)">1</button>
+            <button id = "buttonD" onclick="handleButtonClick('/')" class="specialButton">/</button> 
+            <button id = "button0" onclick="handleButtonClick(0)">0</button>
+            <button id = "buttonK" onclick="handleButtonClick('.')" >.</button>
+            <button id = "button=" onclick="calculate()">=</button>
+            <button id = "buttonM" onclick="handleButtonClick('*')" class="specialButton">*</button>
         </div>
-        <div class = "box" id = "box2">2</div>
-        <div class = "box" id = "box3">3</div>
-        <div class = "box" id = "box4">4</div>
-        <div class = "box" id = "box5">5</div>
-        <div class = "box" id = "box6">6</div>
-        <div class = "box" id = "box7">7</div>
-        <div class = "box" id = "box8">8</div>
-        <div class = "box" id = "box9">9</div>
     </div>
-    <div class="upperbar">
-        <div class = "bar" id = "bar1"></div>
-    </div>
-    <div class="calculation">
-        <div class = "buttona" id = "add">+</div>
-        <div class = "buttona" id = "subtract">-</div>
-        <div class = "buttona" id = "multiply">x</div>
-        <div class = "buttona" id = "divide">/</div>
-    </div>
-    <div class="zero">
-        <div class = "zerobutton" id = "box0">0</div>
-    </div>
-    <button id="myBtn" type="button">Click Me!</button>
     <script>
-        const myBtn = document.getElementById("box2");
-        const outputBar = document.getElementById("bar1");
-        const fuck = document.getElementById("fuck");
+        function handleButtonClick(input){
+            outputBar.value += input;
+        };
 
-        myBtn.addEventListener("click", function(e){
+        function clearBar(){
+            outputBar.value = "";
+        }
 
-            console.log("box1 was pressed");
-            outputBar.innerHTML = fuck.value;
-        });
-    </script>
+        function calculate(){
+            try{
+                outputBar.value = eval(outputBar.value)
+            }
+            catch(error){
+                outputBar.value = "Error"
+            }
+            
+        }
+    </script> 
 </body>
 </html>
